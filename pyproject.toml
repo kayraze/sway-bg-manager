@@ -4,4 +4,19 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "customtkinter>=5.2.2",
+    "pillow>=12.1.1",
+    "types-pillow>=10.2.0.20240822",
+]
+
+[tool.mypy]
+strict = false
+
+[[tool.mypy.overrides]]
+module = "PIL"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "PIL.*"
+ignore_missing_imports = true
